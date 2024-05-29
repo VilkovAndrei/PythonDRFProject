@@ -3,8 +3,9 @@ from django.core.mail import send_mail
 from django.db import models
 
 from config.settings import EMAIL_HOST_USER
+from services import NULLABLE
 
-NULLABLE = {'blank': True, 'null': True}
+# NULLABLE = {'blank': True, 'null': True}
 
 
 class User(AbstractUser):
