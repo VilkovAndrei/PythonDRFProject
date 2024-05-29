@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'rest-framework',
+    'rest_framework',
     'users',
 ]
 
@@ -94,12 +94,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = 'static/'
-# ADMIN_MEDIA_PREFIX = '/static/admin/'
-STATICFILES_DIRS = (
-    BASE_DIR / 'static',
-)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = 'static/'
+# # ADMIN_MEDIA_PREFIX = '/static/admin/'
+# STATICFILES_DIRS = (
+#     BASE_DIR / 'static',
+# )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
