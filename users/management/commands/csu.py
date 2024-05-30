@@ -15,5 +15,6 @@ class Command(BaseCommand):
             is_superuser=True
         )
 
-        user.set_password(PSQL_PSW)
+        # user.set_password(PSQL_PSW)
+        user.set_password("1234")
         user.save()
