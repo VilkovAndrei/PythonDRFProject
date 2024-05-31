@@ -1,12 +1,18 @@
 from rest_framework import viewsets, generics
 
 from lms.models import Course, Lesson
-from lms.serializers import CourseSerializer, LessonSerializer
+from lms.serializers import CourseSerializer, LessonSerializer, CourseDetailSerializer
 
 
 class CourseViewSet(viewsets.ModelViewSet):
-    serializer_class = CourseSerializer
+    default_serializer = CourseSerializer
     queryset = Course.objects.all()
+    serializers_choice = {
+        'retrieve': CourseDetailSerializer,
+    }
+
+    def get_serializer_class(self):
+        return self.serializers_choice.get(self.action, self.default_serializer)
 
 
 class LessonCreateView(generics.CreateAPIView):
