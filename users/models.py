@@ -33,7 +33,7 @@ class User(AbstractUser):
         )
 
 
-class Payments(models.Model):
+class Payment(models.Model):
 
     METHODS = (
         ("CASH", "Наличные"),

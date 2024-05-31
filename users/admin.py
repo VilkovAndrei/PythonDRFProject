@@ -1,6 +1,7 @@
 from typing import Set
 from django.contrib import admin
-from users.models import User
+from users.models import User, Payment
+
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
@@ -31,3 +32,9 @@ class UserAdmin(admin.ModelAdmin):
             if f in form.base_fields:
                 form.base_fields[f].disabled = True
         return form
+
+
+@admin.register(Payment)
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'date', 'course', 'lesson', 'payment_amount', 'payment_method')
+    search_fields = ('user', 'course', 'lesson')
