@@ -1,6 +1,7 @@
 from typing import Set
 from django.contrib import admin
-from users.models import User
+from users.models import User, Payment
+
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
@@ -16,11 +17,7 @@ class UserAdmin(admin.ModelAdmin):
                 'is_superuser',
                 'user_permissions',
             }
-        if (
-                not is_superuser
-                and obj is not None
-                and obj == request.user
-        ):
+        if not is_superuser and obj is not None and obj == request.user:
             disabled_fields |= {
                 'is_staff',
                 'is_superuser',
@@ -31,3 +28,9 @@ class UserAdmin(admin.ModelAdmin):
             if f in form.base_fields:
                 form.base_fields[f].disabled = True
         return form
+
+
+@admin.register(Payment)
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'date', 'course', 'lesson', 'payment_amount', 'payment_method')
+    search_fields = ('user', 'course', 'lesson')

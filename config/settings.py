@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    'django_filters',
     'rest_framework',
     'users',
     'lms',
@@ -68,7 +69,9 @@ DATABASES = {
         'ENGINE': os.getenv('ENGINE'),
         'NAME': os.getenv('NAME'),
         'USER': os.getenv('USER'),
-        'PASSWORD': os.getenv('PASSWORD')
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': os.getenv('DATABASE_PORT')
     }
 }
 
@@ -126,14 +129,8 @@ LOGIN_URL = 'users:login'
 
 SITE_ID = 1
 
-# CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-# CRISPY_TEMPLATE_PACK = "bootstrap5"
-#
-# CACHES = {
-#     'default': {
-#         'BACKEND': os.getenv('BACKEND'),
-#         'LOCATION': os.getenv('LOCATION')
-#     }
-# }
-#
-# CACHE_ENABLED = os.getenv('CACHE_ENABLED')
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+}
