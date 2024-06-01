@@ -17,11 +17,7 @@ class UserAdmin(admin.ModelAdmin):
                 'is_superuser',
                 'user_permissions',
             }
-        if (
-                not is_superuser
-                and obj is not None
-                and obj == request.user
-        ):
+        if not is_superuser and obj is not None and obj == request.user:
             disabled_fields |= {
                 'is_staff',
                 'is_superuser',
