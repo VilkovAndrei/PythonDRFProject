@@ -20,14 +20,6 @@ class UserUpdateView(generics.UpdateAPIView):
     queryset = User.objects.all()
 
 
-# class PaymentViewSet(viewsets.ModelViewSet):
-#     serializer_class = PaymentSerializer
-#     queryset = Payment.objects.all()
-#     filter_backends = [OrderingFilter, DjangoFilterBackend]
-#     # search_fields = ['user', 'course']
-#     ordering_fields = ['date',]
-
-
 class PaymentCreateView(generics.CreateAPIView):
     serializer_class = PaymentSerializer
 
@@ -37,7 +29,7 @@ class PaymentListView(generics.ListAPIView):
     queryset = Payment.objects.all()
     filter_backends = [OrderingFilter, DjangoFilterBackend]
     filterset_fields = ['lesson', 'course', 'payment_method']
-    ordering_fields = ['date',]
+    ordering_fields = ['date']
 
 
 class PaymentRetrieveView(generics.RetrieveAPIView):
