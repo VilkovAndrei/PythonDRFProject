@@ -27,9 +27,9 @@ class UserCreateView(generics.CreateAPIView):
     serializer_class = UserSerializer
 
     def perform_create(self, serializer):
-        user = serializer.save(is_active=True)
-        user.set_password(user.password)
-        user.save()
+        new_user = serializer.save(is_active=True)
+        new_user.set_password(new_user.password)
+        new_user.save()
 
 
 class UserRetrieveView(generics.RetrieveAPIView):
