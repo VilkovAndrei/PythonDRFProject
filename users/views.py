@@ -3,6 +3,16 @@ from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from users.models import User, Payment
 from users.serializers import UserSerializer, PaymentSerializer, UserDetailSerializer
+from rest_framework import viewsets
+
+from users.models import User
+from users.serializers import UserSerializer, MyTokenObtainPairSerializer
+
+from rest_framework_simplejwt.views import TokenObtainPairView
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
