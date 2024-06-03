@@ -6,8 +6,6 @@ from config.settings import EMAIL_HOST_USER
 from lms.models import Course, Lesson
 from services import NULLABLE
 
-# NULLABLE = {'blank': True, 'null': True}
-
 
 class User(AbstractUser):
     username = None
@@ -31,7 +29,6 @@ class User(AbstractUser):
             [f'{self.email}'],
             fail_silently=False,
         )
-
 
 class Payment(models.Model):
 
