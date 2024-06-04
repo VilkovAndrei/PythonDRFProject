@@ -11,6 +11,12 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class UserLimitedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('email', 'phone', 'city')
+
+
 class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Payment

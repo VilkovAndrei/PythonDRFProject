@@ -25,8 +25,10 @@ class CourseDetailSerializer(serializers.ModelSerializer):
         model = Course
         fields = ('name', 'preview', 'description', 'owner', 'lessons', 'lesson_count')
 
-    def get_lesson_count(self, instance):
+    @staticmethod
+    def get_lesson_count(instance):
         return Lesson.objects.filter(course=instance).count()
 
-    def get_lessons(self, instance):
+    @staticmethod
+    def get_lessons(instance):
         return LessonSerializer(Lesson.objects.filter(course=instance), many=True).data

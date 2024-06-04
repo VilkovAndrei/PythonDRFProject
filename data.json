@@ -169,6 +169,32 @@
     }
   },
   {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2024-06-03T19:36:48.076Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "moderator",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2024-06-03T20:31:50.452Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "moderator@test.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+  },
+  {
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -565,6 +591,19 @@
     }
   },
   {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "moderator",
+      "permissions": [
+        34,
+        36,
+        30,
+        32
+      ]
+    }
+  },
+  {
     "model": "contenttypes.contenttype",
     "pk": 1,
     "fields": {
@@ -656,8 +695,8 @@
     "model": "users.user",
     "pk": 1,
     "fields": {
-      "password": "pbkdf2_sha256$720000$UOLBe2gb8waTXxp8XiCnug$MNp5L0DmfusSWMUVXJLGa7kOWYkj/N1xxCdry7rv+SM=",
-      "last_login": "2024-05-31T17:21:14.834Z",
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
+      "last_login": "2024-06-03T20:31:22.546Z",
       "is_superuser": true,
       "first_name": "Admin",
       "last_name": "V",
@@ -676,7 +715,7 @@
     "model": "users.user",
     "pk": 2,
     "fields": {
-      "password": "1234",
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
       "last_login": null,
       "is_superuser": false,
       "first_name": "",
@@ -696,7 +735,7 @@
     "model": "users.user",
     "pk": 3,
     "fields": {
-      "password": "1234",
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
       "last_login": null,
       "is_superuser": false,
       "first_name": "",
@@ -716,7 +755,7 @@
     "model": "users.user",
     "pk": 4,
     "fields": {
-      "password": "1234",
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
       "last_login": null,
       "is_superuser": false,
       "first_name": "",
@@ -729,6 +768,48 @@
       "avatar": "",
       "city": "Тверь",
       "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-03T19:03:23.298Z",
+      "email": "user4@test.com",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Moderator",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-03T20:26:12Z",
+      "email": "moderator@test.com",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "groups": [
+        1
+      ],
       "user_permissions": []
     }
   },
@@ -781,18 +862,6 @@
     }
   },
   {
-    "model": "users.payment",
-    "pk": 5,
-    "fields": {
-      "user": 4,
-      "date": "2024-05-13T05:10:30Z",
-      "course": 1,
-      "lesson": 1,
-      "payment_amount": 100,
-      "payment_method": "CASH"
-    }
-  },
-  {
     "model": "lms.course",
     "pk": 1,
     "fields": {
@@ -820,7 +889,8 @@
       "preview": "",
       "description": "Второй пробный урок пока пуст",
       "url": "",
-      "course": 1
+      "course": 1,
+      "owner": 1
     }
   },
   {
@@ -831,7 +901,8 @@
       "preview": "",
       "description": "Многообразие грибов. Общий справочник грибов.",
       "url": null,
-      "course": 3
+      "course": 3,
+      "owner": 1
     }
   },
   {
@@ -842,7 +913,8 @@
       "preview": "",
       "description": "Урок посвящен описанию вариантов подбора гармоничной снасти под определенные условия лова.",
       "url": null,
-      "course": 1
+      "course": 1,
+      "owner": 1
     }
   },
   {
@@ -853,7 +925,8 @@
       "preview": "",
       "description": "В уроке рассмотрены ядовитые грибы средней полосы России, а также условно съедобные грибы и принцип безопасного сбора грибов.",
       "url": null,
-      "course": 3
+      "course": 3,
+      "owner": 1
     }
   }
 ]
