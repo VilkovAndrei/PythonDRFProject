@@ -1,1 +1,932 @@
-[{"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2024-05-30T17:17:40.758Z", "user": 1, "content_type": 9, "object_id": "1", "object_repr": "Первый пробный курс", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2024-05-31T17:24:23.334Z", "user": 1, "content_type": 7, "object_id": "2", "object_repr": "user1@test.com", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2024-05-31T17:24:55.398Z", "user": 1, "content_type": 7, "object_id": "3", "object_repr": "user2@test.com", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2024-05-31T17:25:55.845Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "user3@test.com", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2024-05-31T17:29:02.899Z", "user": 1, "content_type": 9, "object_id": "3", "object_repr": "Определитель грибов", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2024-05-31T17:44:59.190Z", "user": 1, "content_type": 8, "object_id": "2", "object_repr": "Вводный урок, курс Определитель грибов", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2024-05-31T17:47:15.064Z", "user": 1, "content_type": 8, "object_id": "3", "object_repr": "Урок 2. Гармоничная снасть, курс Пробный курс. Основы безмотыльной ловли рыбы", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 8, "fields": {"action_time": "2024-05-31T17:51:39.764Z", "user": 1, "content_type": 8, "object_id": "4", "object_repr": "Урок 1. Ядовитые  и условно съедобные грибы, курс Определитель грибов", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 9, "fields": {"action_time": "2024-05-31T17:53:25.324Z", "user": 1, "content_type": 10, "object_id": "1", "object_repr": "user1@test.com - 2024-05-24 20:52:27+03:00 - 1200", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 10, "fields": {"action_time": "2024-05-31T17:54:38.587Z", "user": 1, "content_type": 10, "object_id": "2", "object_repr": "user2@test.com - 2024-05-17 10:53:52+03:00 - 200", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 11, "fields": {"action_time": "2024-05-31T17:55:47.599Z", "user": 1, "content_type": 10, "object_id": "3", "object_repr": "user2@test.com - 2024-05-01 15:54:58+03:00 - 250", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 12, "fields": {"action_time": "2024-05-31T17:58:15.506Z", "user": 1, "content_type": 10, "object_id": "4", "object_repr": "user3@test.com - 2024-05-20 10:20:52+03:00 - 210", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 13, "fields": {"action_time": "2024-05-31T17:59:35.868Z", "user": 1, "content_type": 10, "object_id": "5", "object_repr": "user3@test.com - 2024-05-13 08:10:30+03:00 - 100", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 14, "fields": {"action_time": "2024-06-03T19:36:48.076Z", "user": 1, "content_type": 3, "object_id": "1", "object_repr": "moderator", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 15, "fields": {"action_time": "2024-06-03T20:31:50.452Z", "user": 1, "content_type": 7, "object_id": "6", "object_repr": "moderator@test.com", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view log entry", "content_type": 1, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add permission", "content_type": 2, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change permission", "content_type": 2, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete permission", "content_type": 2, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view permission", "content_type": 2, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change group", "content_type": 3, "codename": "change_group"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete group", "content_type": 3, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view group", "content_type": 3, "codename": "view_group"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add content type", "content_type": 4, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change content type", "content_type": 4, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete content type", "content_type": 4, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view content type", "content_type": 4, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add session", "content_type": 5, "codename": "add_session"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change session", "content_type": 5, "codename": "change_session"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete session", "content_type": 5, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view session", "content_type": 5, "codename": "view_session"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add site", "content_type": 6, "codename": "add_site"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change site", "content_type": 6, "codename": "change_site"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete site", "content_type": 6, "codename": "delete_site"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view site", "content_type": 6, "codename": "view_site"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add Пользователь", "content_type": 7, "codename": "add_user"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change Пользователь", "content_type": 7, "codename": "change_user"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete Пользователь", "content_type": 7, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view Пользователь", "content_type": 7, "codename": "view_user"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add Урок", "content_type": 8, "codename": "add_lesson"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change Урок", "content_type": 8, "codename": "change_lesson"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete Урок", "content_type": 8, "codename": "delete_lesson"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view Урок", "content_type": 8, "codename": "view_lesson"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add Курс", "content_type": 9, "codename": "add_course"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change Курс", "content_type": 9, "codename": "change_course"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete Курс", "content_type": 9, "codename": "delete_course"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view Курс", "content_type": 9, "codename": "view_course"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add Платеж", "content_type": 10, "codename": "add_payments"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change Платеж", "content_type": 10, "codename": "change_payments"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete Платеж", "content_type": 10, "codename": "delete_payments"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view Платеж", "content_type": 10, "codename": "view_payments"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can add Платеж", "content_type": 10, "codename": "add_payment"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can change Платеж", "content_type": 10, "codename": "change_payment"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can delete Платеж", "content_type": 10, "codename": "delete_payment"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can view Платеж", "content_type": 10, "codename": "view_payment"}}, {"model": "auth.group", "pk": 1, "fields": {"name": "moderator", "permissions": [34, 36, 30, 32]}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "sites", "model": "site"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "users", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "lms", "model": "lesson"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "lms", "model": "course"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "users", "model": "payment"}}, {"model": "sites.site", "pk": 1, "fields": {"domain": "example.com", "name": "example.com"}}, {"model": "users.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=", "last_login": "2024-06-03T20:31:22.546Z", "is_superuser": true, "first_name": "Admin", "last_name": "V", "is_staff": true, "is_active": true, "date_joined": "2024-05-29T20:46:13.065Z", "email": "admin@test.com", "phone": "+79993332255", "avatar": "", "city": null, "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-05-31T17:21:57Z", "email": "user1@test.com", "phone": null, "avatar": "", "city": "Москва", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 3, "fields": {"password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-05-31T17:24:29Z", "email": "user2@test.com", "phone": null, "avatar": "", "city": null, "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 4, "fields": {"password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-05-31T17:25:21Z", "email": "user3@test.com", "phone": null, "avatar": "", "city": "Тверь", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 5, "fields": {"password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=", "last_login": null, "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-06-03T19:03:23.298Z", "email": "user4@test.com", "phone": null, "avatar": "", "city": null, "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 6, "fields": {"password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=", "last_login": null, "is_superuser": false, "first_name": "Moderator", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2024-06-03T20:26:12Z", "email": "moderator@test.com", "phone": null, "avatar": "", "city": null, "groups": [1], "user_permissions": []}}, {"model": "users.payment", "pk": 1, "fields": {"user": 2, "date": "2024-05-24T17:52:27Z", "course": 1, "lesson": null, "payment_amount": 1200, "payment_method": "NON_CASH"}}, {"model": "users.payment", "pk": 2, "fields": {"user": 3, "date": "2024-05-17T07:53:52Z", "course": null, "lesson": 2, "payment_amount": 200, "payment_method": "CASH"}}, {"model": "users.payment", "pk": 3, "fields": {"user": 3, "date": "2024-05-01T12:54:58Z", "course": null, "lesson": 1, "payment_amount": 250, "payment_method": "NON_CASH"}}, {"model": "users.payment", "pk": 4, "fields": {"user": 4, "date": "2024-05-20T07:20:52Z", "course": 1, "lesson": 3, "payment_amount": 210, "payment_method": "NON_CASH"}}, {"model": "lms.course", "pk": 1, "fields": {"name": "Пробный курс. Основы безмотыльной ловли рыбы", "preview": "", "description": "Описаны основные способы поиска и ловли рыбы на безмотыльную снасть зимой и летом", "owner": 1}}, {"model": "lms.course", "pk": 3, "fields": {"name": "Определитель грибов", "preview": "", "description": "Описание и фото грибов центральной части России.", "owner": 1}}, {"model": "lms.lesson", "pk": 1, "fields": {"name": "Второй пробный урок", "preview": "", "description": "Второй пробный урок пока пуст", "url": "", "course": 1, "owner": 1}}, {"model": "lms.lesson", "pk": 2, "fields": {"name": "Вводный урок", "preview": "", "description": "Многообразие грибов. Общий справочник грибов.", "url": null, "course": 3, "owner": 1}}, {"model": "lms.lesson", "pk": 3, "fields": {"name": "Урок 2. Гармоничная снасть", "preview": "", "description": "Урок посвящен описанию вариантов подбора гармоничной снасти под определенные условия лова.", "url": null, "course": 1, "owner": 1}}, {"model": "lms.lesson", "pk": 4, "fields": {"name": "Урок 1. Ядовитые  и условно съедобные грибы", "preview": "", "description": "В уроке рассмотрены ядовитые грибы средней полосы России, а также условно съедобные грибы и принцип безопасного сбора грибов.", "url": null, "course": 3, "owner": 1}}]
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-05-30T17:17:40.758Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "Первый пробный курс",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-05-31T17:24:23.334Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "user1@test.com",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-05-31T17:24:55.398Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "user2@test.com",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-05-31T17:25:55.845Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "user3@test.com",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-05-31T17:29:02.899Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "Определитель грибов",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-05-31T17:44:59.190Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Вводный урок, курс Определитель грибов",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-05-31T17:47:15.064Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "Урок 2. Гармоничная снасть, курс Пробный курс. Основы безмотыльной ловли рыбы",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-05-31T17:51:39.764Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "Урок 1. Ядовитые  и условно съедобные грибы, курс Определитель грибов",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-05-31T17:53:25.324Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "user1@test.com - 2024-05-24 20:52:27+03:00 - 1200",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-05-31T17:54:38.587Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "user2@test.com - 2024-05-17 10:53:52+03:00 - 200",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-05-31T17:55:47.599Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "3",
+      "object_repr": "user2@test.com - 2024-05-01 15:54:58+03:00 - 250",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-05-31T17:58:15.506Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "user3@test.com - 2024-05-20 10:20:52+03:00 - 210",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2024-05-31T17:59:35.868Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "5",
+      "object_repr": "user3@test.com - 2024-05-13 08:10:30+03:00 - 100",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2024-06-03T19:36:48.076Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "moderator",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2024-06-03T20:31:50.452Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "moderator@test.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add site",
+      "content_type": 6,
+      "codename": "add_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change site",
+      "content_type": 6,
+      "codename": "change_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete site",
+      "content_type": 6,
+      "codename": "delete_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view site",
+      "content_type": 6,
+      "codename": "view_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add Пользователь",
+      "content_type": 7,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change Пользователь",
+      "content_type": 7,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete Пользователь",
+      "content_type": 7,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view Пользователь",
+      "content_type": 7,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add Урок",
+      "content_type": 8,
+      "codename": "add_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change Урок",
+      "content_type": 8,
+      "codename": "change_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete Урок",
+      "content_type": 8,
+      "codename": "delete_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view Урок",
+      "content_type": 8,
+      "codename": "view_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add Курс",
+      "content_type": 9,
+      "codename": "add_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change Курс",
+      "content_type": 9,
+      "codename": "change_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete Курс",
+      "content_type": 9,
+      "codename": "delete_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view Курс",
+      "content_type": 9,
+      "codename": "view_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add Платеж",
+      "content_type": 10,
+      "codename": "add_payments"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change Платеж",
+      "content_type": 10,
+      "codename": "change_payments"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete Платеж",
+      "content_type": 10,
+      "codename": "delete_payments"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view Платеж",
+      "content_type": 10,
+      "codename": "view_payments"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add Платеж",
+      "content_type": 10,
+      "codename": "add_payment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change Платеж",
+      "content_type": 10,
+      "codename": "change_payment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete Платеж",
+      "content_type": 10,
+      "codename": "delete_payment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view Платеж",
+      "content_type": 10,
+      "codename": "view_payment"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "moderator",
+      "permissions": [
+        34,
+        36,
+        30,
+        32
+      ]
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sites",
+      "model": "site"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "users",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "lms",
+      "model": "lesson"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "lms",
+      "model": "course"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "users",
+      "model": "payment"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 1,
+    "fields": {
+      "domain": "example.com",
+      "name": "example.com"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
+      "last_login": "2024-06-03T20:31:22.546Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "V",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-05-29T20:46:13.065Z",
+      "email": "admin@test.com",
+      "phone": "+79993332255",
+      "avatar": "",
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-05-31T17:21:57Z",
+      "email": "user1@test.com",
+      "phone": null,
+      "avatar": "",
+      "city": "Москва",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-05-31T17:24:29Z",
+      "email": "user2@test.com",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-05-31T17:25:21Z",
+      "email": "user3@test.com",
+      "phone": null,
+      "avatar": "",
+      "city": "Тверь",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-03T19:03:23.298Z",
+      "email": "user4@test.com",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pE6MSI48BnxFo8ai8t6xOw$EdS1Hxcu9iranQl3D5Jw+b75/poz95R6Rz1mJxC2Uw8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Moderator",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-03T20:26:12Z",
+      "email": "moderator@test.com",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "date": "2024-05-24T17:52:27Z",
+      "course": 1,
+      "lesson": null,
+      "payment_amount": 1200,
+      "payment_method": "NON_CASH"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "date": "2024-05-17T07:53:52Z",
+      "course": null,
+      "lesson": 2,
+      "payment_amount": 200,
+      "payment_method": "CASH"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "date": "2024-05-01T12:54:58Z",
+      "course": null,
+      "lesson": 1,
+      "payment_amount": 250,
+      "payment_method": "NON_CASH"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "date": "2024-05-20T07:20:52Z",
+      "course": 1,
+      "lesson": 3,
+      "payment_amount": 210,
+      "payment_method": "NON_CASH"
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 1,
+    "fields": {
+      "name": "Пробный курс. Основы безмотыльной ловли рыбы",
+      "preview": "",
+      "description": "Описаны основные способы поиска и ловли рыбы на безмотыльную снасть зимой и летом",
+      "owner": 1
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 3,
+    "fields": {
+      "name": "Определитель грибов",
+      "preview": "",
+      "description": "Описание и фото грибов центральной части России.",
+      "owner": 1
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 1,
+    "fields": {
+      "name": "Второй пробный урок",
+      "preview": "",
+      "description": "Второй пробный урок пока пуст",
+      "url": "",
+      "course": 1,
+      "owner": 1
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 2,
+    "fields": {
+      "name": "Вводный урок",
+      "preview": "",
+      "description": "Многообразие грибов. Общий справочник грибов.",
+      "url": null,
+      "course": 3,
+      "owner": 1
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 3,
+    "fields": {
+      "name": "Урок 2. Гармоничная снасть",
+      "preview": "",
+      "description": "Урок посвящен описанию вариантов подбора гармоничной снасти под определенные условия лова.",
+      "url": null,
+      "course": 1,
+      "owner": 1
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 4,
+    "fields": {
+      "name": "Урок 1. Ядовитые  и условно съедобные грибы",
+      "preview": "",
+      "description": "В уроке рассмотрены ядовитые грибы средней полосы России, а также условно съедобные грибы и принцип безопасного сбора грибов.",
+      "url": null,
+      "course": 3,
+      "owner": 1
+    }
+  }
+]
