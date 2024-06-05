@@ -56,4 +56,4 @@ class LessonUpdateView(generics.UpdateAPIView):
 
 class LessonDestroyView(generics.DestroyAPIView):
     queryset = Lesson.objects.all()
-    permission_classes = [IsOwner]
+    permission_classes = [IsOwner & ~IsModerator]
