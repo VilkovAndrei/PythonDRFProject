@@ -1,8 +1,11 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, generics
+from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 
-from lms.models import Course, Lesson
-from lms.serializers import CourseSerializer, LessonSerializer, CourseDetailSerializer
+from lms.models import Course, Lesson, Subscription
+from lms.serializers import CourseSerializer, LessonSerializer, CourseDetailSerializer, SubscriptionSerializer
 from users.permissions import IsModerator, IsOwner
 
 
@@ -19,7 +22,9 @@ class CourseViewSet(viewsets.ModelViewSet):
     def get_permissions(self):
         if self.action == 'create':
             self.permission_classes = [IsAuthenticated & ~IsModerator]
-        elif self.action in ['list', 'retrieve', 'update']:
+        elif self.action == 'list':
+            self.permission_classes = [IsAuthenticated]
+        elif self.action in ['retrieve', 'update']:
             self.permission_classes = [IsOwner | IsModerator]
         elif self.action == 'destroy':
             self.permission_classes = [IsOwner]
@@ -57,3 +62,22 @@ class LessonUpdateView(generics.UpdateAPIView):
 class LessonDestroyView(generics.DestroyAPIView):
     queryset = Lesson.objects.all()
     permission_classes = [IsOwner & ~IsModerator]
+
+
+class SubscriptionCreateAPIView(CreateAPIView):
+    serializer_class = SubscriptionSerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        user = self.request.user
+        course_id = self.request.data.get('course')
+        course_item = get_object_or_404(Course, pk=course_id)
+
+        if Subscription.objects.filter(user=user, course=course_item).exists():
+            Subscription.objects.get(user=user, course=course_item).delete()
+            message = 'подписка удалена'
+        else:
+            Subscription.objects.create(user=user, course=course_item)
+            message = 'подписка добавлена'
+
+        return Response({"message": message})
