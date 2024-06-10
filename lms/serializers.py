@@ -9,6 +9,7 @@ class LessonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lesson
+        extra_kwargs = {'url': {'required': False}}
         validators = [LessonUrlValidator(field='url')]
         fields = '__all__'
 
