@@ -27,9 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'django_filters',
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_filters',
     'users',
     'lms',
 ]
