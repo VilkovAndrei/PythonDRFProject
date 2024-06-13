@@ -10,6 +10,8 @@ from users.serializers import (UserSerializer, PaymentSerializer, UserDetailSeri
 
 from rest_framework_simplejwt.views import TokenObtainPairView
 
+from users.services import create_stripe_product, create_stripe_price, create_stripe_session, convert_rub_to_usd
+
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
@@ -56,6 +58,20 @@ class UserDestroyView(generics.DestroyAPIView):
 class PaymentCreateView(generics.CreateAPIView):
     serializer_class = PaymentSerializer
     permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        payment = serializer.save()
+        payment.user = self.request.user
+        stripe_product_id = create_stripe_product(payment)
+        # payment.payment_amount = payment.summ
+        price_usd = convert_rub_to_usd(payment.payment_amount)
+        price = create_stripe_price(summ=price_usd, stripe_product_id=stripe_product_id)
+        session_id, payment_link, payment_status = create_stripe_session(price=price)
+        payment.session_id = session_id
+        payment.payment_url = payment_link
+        payment.payment_status = payment_status
+        payment.save()
+        return super().perform_create(serializer)
 
 
 class PaymentListView(generics.ListAPIView):

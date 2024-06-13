@@ -4,7 +4,7 @@ from django.db import models
 
 from config.settings import EMAIL_HOST_USER
 from lms.models import Course, Lesson
-from services import NULLABLE
+from users.services import NULLABLE
 
 
 class User(AbstractUser):
@@ -30,6 +30,7 @@ class User(AbstractUser):
             fail_silently=False,
         )
 
+
 class Payment(models.Model):
 
     METHODS = (
@@ -43,6 +44,9 @@ class Payment(models.Model):
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, verbose_name="Оплаченный урок", **NULLABLE)
     payment_amount = models.PositiveIntegerField(verbose_name="Сумма оплаты")
     payment_method = models.CharField(max_length=10, default="CASH", choices=METHODS, verbose_name="Способ оплаты")
+    payment_status = models.CharField(default='unpaid', verbose_name='Статус оплаты')
+    payment_url = models.URLField(max_length=400, verbose_name='Ссылка на оплату', **NULLABLE)
+    session_id = models.CharField(max_length=255, verbose_name='id платежной сессии', **NULLABLE)
 
     class Meta:
         verbose_name = "Платеж"
@@ -50,4 +54,5 @@ class Payment(models.Model):
         ordering = ("date",)
 
     def __str__(self):
-        return f"{self.user} - {self.date} - {self.payment_amount}"
+        return (f'Платёж {self.payment_amount} от {self.user} способ оплаты {self.payment_method} '
+                f'за {self.course if self.course else self.lesson}')

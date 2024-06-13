@@ -1,7 +1,7 @@
 from django.db import models
 
 from config import settings
-from services import NULLABLE
+from users.services import NULLABLE
 
 
 class Course(models.Model):
