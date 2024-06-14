@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import viewsets, generics
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAuthenticated
@@ -71,6 +72,7 @@ class SubscriptionCreateAPIView(CreateAPIView):
     serializer_class = SubscriptionSerializer
     permission_classes = [IsAuthenticated]
 
+    @swagger_auto_schema(request_body=SubscriptionSerializer)
     def post(self, request, *args, **kwargs):
         user = self.request.user
         course_id = self.request.data.get('course')
