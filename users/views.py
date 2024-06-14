@@ -1,4 +1,4 @@
-from rest_framework import viewsets, generics
+from rest_framework import viewsets, generics, serializers
 from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import IsAuthenticated
@@ -6,11 +6,12 @@ from rest_framework.permissions import IsAuthenticated
 from users.models import User, Payment
 from users.permissions import UserPermissionsDestroy, IsOwner
 from users.serializers import (UserSerializer, PaymentSerializer, UserDetailSerializer, UserLimitedSerializer,
-                               MyTokenObtainPairSerializer)
+                               MyTokenObtainPairSerializer, PaymentRetrieveSerializer)
 
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from users.services import create_stripe_product, create_stripe_price, create_stripe_session, convert_rub_to_usd
+from users.services import create_stripe_product, create_stripe_price, create_stripe_session, convert_rub_to_usd, \
+    convert_currency
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
@@ -60,16 +61,25 @@ class PaymentCreateView(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
+        course = serializer.validated_data.get('course')
+        lesson = serializer.validated_data.get('lesson')
+        if not course and not lesson:
+            raise serializers.ValidationError('Course or lesson is required.')
         payment = serializer.save()
+        payment.payment_amount = 0
+        if course:
+            payment.payment_amount = course.amount
+        elif lesson:
+            payment.payment_amount = lesson.amount
         payment.user = self.request.user
-        stripe_product_id = create_stripe_product(payment)
-        # payment.payment_amount = payment.summ
-        price_usd = convert_rub_to_usd(payment.payment_amount)
-        price = create_stripe_price(summ=price_usd, stripe_product_id=stripe_product_id)
-        session_id, payment_link, payment_status = create_stripe_session(price=price)
-        payment.session_id = session_id
-        payment.payment_url = payment_link
-        payment.payment_status = payment_status
+        if payment.payment_method == 'NON_CASH':
+            stripe_product_id = create_stripe_product(payment)
+            price_usd = convert_currency(payment.payment_amount)
+            price = create_stripe_price(summ=price_usd, stripe_product_id=stripe_product_id)
+            session_id, payment_link, payment_status = create_stripe_session(price=price)
+            payment.session_id = session_id
+            payment.payment_url = payment_link
+            payment.payment_status = payment_status
         payment.save()
         return super().perform_create(serializer)
 
@@ -80,13 +90,13 @@ class PaymentListView(generics.ListAPIView):
     filter_backends = [OrderingFilter, DjangoFilterBackend]
     filterset_fields = ['lesson', 'course', 'payment_method']
     ordering_fields = ['date']
-    permission_classes = [IsOwner]
+    permission_classes = [IsAuthenticated]
 
 
 class PaymentRetrieveView(generics.RetrieveAPIView):
-    serializer_class = PaymentSerializer
+    serializer_class = PaymentRetrieveSerializer
     queryset = Payment.objects.all()
-    permission_classes = [IsOwner]
+    permission_classes = [IsAuthenticated]
 
 
 class PaymentUpdateView(generics.UpdateAPIView):

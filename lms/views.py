@@ -70,7 +70,7 @@ class LessonDestroyView(generics.DestroyAPIView):
 
 class SubscriptionCreateAPIView(CreateAPIView):
     serializer_class = SubscriptionSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(request_body=SubscriptionSerializer)
     def post(self, request, *args, **kwargs):

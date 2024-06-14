@@ -1,9 +1,24 @@
 import stripe
+import requests
 from forex_python.converter import CurrencyRates
-from config.settings import STRIPE_API_KEY
+from rest_framework import status
+
+from config.settings import STRIPE_API_KEY, CUR_API_URL, CUR_API_KEY
 
 stripe.api_key = STRIPE_API_KEY
 NULLABLE = {'blank': True, 'null': True}
+
+
+def convert_currency(rub_price):
+    usd_price = 0
+    response = requests.get(f'{CUR_API_URL}?apikey={CUR_API_KEY}&currencies=RUB')
+    if response.status_code == status.HTTP_200_OK:
+        usd_rate = response.json()['data']['RUB']['value']
+        # print(usd_rate)
+        usd_price = int(rub_price / usd_rate)
+        # print(usd_price)
+        # print(int(usd_price * usd_rate))
+    return usd_price
 
 
 def convert_rub_to_usd(amount):
@@ -35,3 +50,8 @@ def create_stripe_session(price):
     )
     return session.get('id'), session.get('url'), session.get('payment_status')
 
+def get_paymant_stripe_status(session_id):
+    session = stripe.checkout.Session.retrieve(
+        id=session_id,
+    )
+    return session["payment_status"]
