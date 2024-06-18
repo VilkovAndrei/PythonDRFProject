@@ -36,7 +36,7 @@ class CourseViewSet(viewsets.ModelViewSet):
 
     def update(self, request, pk):
         course = get_object_or_404(Course, pk=pk)
-        send_email_about_update_course.delay_on_commit(course_id=course.id)
+        send_email_about_update_course.apply_async(course_id=course.id, countdown=14400)
         return super().update(request)
 
 

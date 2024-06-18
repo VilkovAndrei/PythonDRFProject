@@ -29,7 +29,7 @@ def send_email_about_update_course(course_id):
 @shared_task
 def check_user():
     active_users = User.objects.filter(is_active=True, is_superuser=False, last_login__isnull=False)
-    now_time = datetime.now(timezone.utc)
+    now_time = datetime.now()
     for user in active_users:
         if user.last_login:
             if now_time - user.last_login > timedelta(days=10):
