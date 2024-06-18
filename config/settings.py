@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_filters',
+    'django_celery_beat',
     'users',
     'lms',
 ]
@@ -172,3 +173,36 @@ STRIPE_API_KEY = os.getenv('STRIPE_API_KEY')
 
 CUR_API_URL= os.getenv('CUR_API_URL')
 CUR_API_KEY= os.getenv('CUR_API_KEY')
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': os.getenv('BACKEND'),
+#         'LOCATION': os.getenv('LOCATION')
+#     }
+# }
+#
+# CACHE_ENABLED = os.getenv('CACHE_ENABLED')
+
+# Настройки для Celery
+
+# URL-адрес брокера сообщений
+CELERY_BROKER_URL = os.getenv('LOCATION') # Например, Redis, который по умолчанию работает на порту 6379
+
+# URL-адрес брокера результатов, также Redis
+CELERY_RESULT_BACKEND = os.getenv('LOCATION')
+
+# Часовой пояс для работы Celery
+CELERY_TIMEZONE = TIME_ZONE
+
+# Флаг отслеживания выполнения задач
+CELERY_TASK_TRACK_STARTED = True
+
+# Максимальное время на выполнение задачи
+CELERY_TASK_TIME_LIMIT = 30 * 600
+
+CELERY_BEAT_SCHEDULE = {
+    'check_user': {
+        'task': 'lms.tasks.check_user',  # Путь к задаче
+        'schedule': timedelta(days=1),  # Расписание выполнения задачи
+    },
+}
