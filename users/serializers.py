@@ -1,3 +1,5 @@
+from datetime import timezone
+
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework.fields import SerializerMethodField
@@ -62,3 +64,12 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['email'] = user.email
 
         return token
+
+    def post(self, request, *args, **kwargs):
+        email = request.data.get("email")
+        if User.objects.filter(email=email).exists():
+            user = User.objects.get(email=email)
+            user.last_login = timezone.now()
+            user.save()
+
+        return super().post(request)

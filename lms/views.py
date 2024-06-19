@@ -34,10 +34,15 @@ class CourseViewSet(viewsets.ModelViewSet):
             self.permission_classes = [IsOwner]
         return [permission() for permission in self.permission_classes]
 
-    def update(self, request, pk):
-        course = get_object_or_404(Course, pk=pk)
-        send_email_about_update_course.apply_async(course_id=course.id, countdown=14400)
-        return super().update(request)
+    # def update(self, request, pk):
+    #     course = get_object_or_404(Course, pk=pk)
+    #     send_email_about_update_course.apply_async(course_id=course.id, countdown=14400)
+    #     return super().update(request)
+
+    def perform_update(self, serializer):
+        update_course = serializer.save()
+        update_course.save()
+        send_email_about_update_course.apply_async(course_id=update_course.id, countdown=14400)
 
 
 class LessonCreateView(generics.CreateAPIView):
