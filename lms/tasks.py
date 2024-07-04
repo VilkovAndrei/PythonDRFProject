@@ -32,6 +32,7 @@ def check_user():
     now_time = datetime.now()
     for user in active_users:
         if user.last_login:
+            logger.info(f"Задача проверки пользователя {user} на пассивность запущена")
             if now_time - user.last_login > timedelta(days=10):
                 user.is_active = False
                 user.save()

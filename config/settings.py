@@ -203,6 +203,6 @@ CELERY_TASK_TIME_LIMIT = 30 * 600
 CELERY_BEAT_SCHEDULE = {
     'check_user': {
         'task': 'lms.tasks.check_user',  # Путь к задаче
-        'schedule': timedelta(days=1),  # Расписание выполнения задачи
+        'schedule': timedelta(minutes=3),  # Расписание выполнения задачи
     },
 }

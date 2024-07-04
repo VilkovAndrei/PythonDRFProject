@@ -38,7 +38,7 @@ class UserRetrieveView(generics.RetrieveAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_serializer_class(self):
-        if self.request.user.id == self.kwargs["pk"] or self.request.user.is_superuser:
+        if self.request.user.id == self.kwargs["id"] or self.request.user.is_superuser:
             self.serializer_class = UserDetailSerializer
         else:
             self.serializer_class = UserLimitedSerializer
